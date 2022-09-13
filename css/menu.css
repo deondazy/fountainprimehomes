@@ -3,10 +3,10 @@
 ------------------------------------- */
 #logo {
     display: inline-block;
-    margin-top: 1px;
+    margin-top: 3px;
 }
 #logo img {
-    width: 60px;
+    width: 150px;
     height: auto;
     transform: translate3d(0, 0, 0);
 }
@@ -186,7 +186,7 @@ a.button.border {
     padding: 9px 19px;
 }
 a.button.border, a.button {
-    background-color: #FF385C;
+    background-color: #004274;
     top: 0;
     padding: 10px 20px;
     color: #fff;
@@ -504,8 +504,8 @@ a.button.border, a.button {
     border-radius: 3px;
 }
 #navigation.style-1 ul li:hover {
-    background-color: #FF385C;
-    color: #FF385C;
+    background-color: #004274;
+    color: #004274;
 }
 #navigation.style-1 ul li:hover a {
     color: #fff;

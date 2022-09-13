@@ -2257,7 +2257,7 @@ screen and (max-height:300px) {
     background: rgba(74,74,76,0.7) !important;
 }
 .homepage-9 .homes-tag.featured {
-    background: #FF385C !important;
+    background: #004274 !important;
 }
 .homepage-9 .portfolio .homes-price {
     font-size: 20px !important;
@@ -2328,7 +2328,7 @@ screen and (max-height:300px) {
 }
 .homepage-9.homepage-4 a.button.border, a.button {
     width: 150px;
-    background: #FF385C;
+    background: #004274;
     color: #fff !important;
 }
 .homepage-9.homepage-4 .portfolio .project-single {
@@ -2420,7 +2420,7 @@ screen and (max-height:300px) {
 }
 .homepage-9 .portfolio .homes-content h3 a:hover,
 .homepage-9 .blog-section .news-item h3:hover {
-    color: #FF385C;
+    color: #004274;
 }
 .homepage-9 .portfolio .footer img {
     width: 40px;
@@ -2516,7 +2516,7 @@ section.feature-categories {
 }
 .homepage-9 section.portfolio {
     padding: 5.6rem 0;
-    background: #FF385C;
+    background: #004274;
 }
 .homepage-9 .sec-title.discover h2 span,
 .homepage-9 .sec-title.discover h2,
@@ -2531,7 +2531,7 @@ section.feature-categories {
     background: #eee;
 }
 .homepage-9 .fd-1 .slick-dots li:after {
-    background: #FF385C;
+    background: #004274;
 }
 .homepage-9 .portfolio .project-single {
     box-shadow: none;
