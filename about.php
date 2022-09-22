@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/bootstrap.php';
 
-$page = 'About us';
+$page = 'About Us';
 
 include OKOYE_ROOT . '/header.php';
 ?>
