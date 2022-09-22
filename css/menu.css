@@ -501,11 +501,13 @@ a.button.border, a.button {
     transition: all 0.25s;    
     border-radius: 3px;
 }
-#navigation.style-1 ul li:hover {
+#navigation.style-1 ul li:hover,
+#navigation.style-1 ul li.active {
     background-color: #004274;
     color: #004274;
 }
-#navigation.style-1 ul li:hover a {
+#navigation.style-1 ul li:hover a,
+#navigation.style-1 ul li.active a {
     color: #fff;
 }
 #navigation.style-1 ul a {
@@ -535,7 +537,7 @@ a.button.border, a.button {
 }
 #navigation.style-2.cloned .header-user-name, 
 #header.cloned.sticky .header-user-name, 
-#navigation.style-2.cloned .header-user-name:before, 
+#navigation.style-2.cloned .header-user-name:before,
 #header.cloned.sticky .header-user-name:before {
     color: #666;
 }
