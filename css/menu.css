@@ -183,6 +183,7 @@ a.button.border {
     padding: 9px 19px;
 }
 a.button.border, a.button {
+    text-align: center;
     background-color: #004274;
     top: 0;
     padding: 10px 20px;
