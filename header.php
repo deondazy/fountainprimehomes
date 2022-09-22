@@ -1,3 +1,13 @@
+<?php 
+// Function to set active class on nav links
+function isActive($currentPage) {
+    global $page;
+
+    if ($page == $currentPage) {
+        echo 'class="active"';
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,18 +70,18 @@
                         <!-- Main Navigation -->
                         <nav id="navigation" class="style-1 <?php echo ($page == 'Home') ? 'head-tr' : ''; ?>">
                             <ul id="responsive">
-                                <li><a href="<?php echo $site->url; ?>/">Home</a>
+                                <li <?php echo isActive('Home'); ?>><a href="<?php echo $site->url; ?>/">Home</a>
                                 </li>
-                                <li><a href="<?php echo $site->url; ?>/apartments/">Apartments</a>
+                                <li <?php echo isActive('Apartments'); ?>><a href="<?php echo $site->url; ?>/apartments/">Apartments</a>
                                 </li>
-                                <li><a href="<?php echo $site->url; ?>/facilities/">Facilities</a>
+                                <li <?php echo isActive('Facilities'); ?>><a href="<?php echo $site->url; ?>/facilities/">Facilities</a>
 
                                 </li>
-                                <li><a href="<?php echo $site->url; ?>/about/">About</a>
+                                <li <?php echo isActive('About Us'); ?>><a href="<?php echo $site->url; ?>/about/">About</a>
                                 </li>
-                                <li><a href="<?php echo $site->url; ?>/blog/">Blog</a>
+                                <li <?php echo isActive('Blog'); ?>><a href="<?php echo $site->url; ?>/blog/">Blog</a>
                                 </li>
-                                <li><a href="<?php echo $site->url; ?>/contact-us/">Contact</a></li>
+                                <li <?php echo isActive('Contact Us'); ?>><a href="<?php echo $site->url; ?>/contact-us/">Contact</a></li>
                             </ul>
                         </nav>
                         <!-- Main Navigation / End -->
