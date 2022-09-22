@@ -25,7 +25,7 @@ include OKOYE_ROOT . '/header.php';
                 <form method="post">
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" name="email" id="email">
+                        <input type="email" class="form-control" name="email" id="email" autofocus>
                     </div>
 
                     <div class="form-group">
