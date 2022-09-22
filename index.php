@@ -1,4 +1,15 @@
-<?php include __DIR__ . '/header.php'; ?>
+<?php
+if (!session_id()) {
+    session_start();
+}
+
+use Okoye\Core\Util;
+
+require __DIR__ . '/bootstrap.php';
+
+$page = 'Home';
+
+include OKOYE_ROOT . '/header.php'; ?>
 
         <!-- START SECTION HEADINGS -->
         <section id="home" class="section welcome-area bg-overlay d-flex align-items-center overflow-hidden">
@@ -856,4 +867,4 @@
         </div>
         <!-- END SECTION PARTNERS -->
 
-        <?php include __DIR__ . '/footer.php'; ?>
+<?php include OKOYE_ROOT . '/footer.php'; ?>
