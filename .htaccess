@@ -1,0 +1,39 @@
+<IfModule mod_rewrite.c>
+RewriteEngine on
+
+RewriteCond %{REQUEST_URI} /+[^\.]+$
+RewriteRule ^(.+[^/])$ %{REQUEST_URI}/ [R=301,L]
+
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# 404 PAGE
+ErrorDocument 404 /404.php
+
+# AUTHENTICATION
+RewriteRule ^login/*$ ./user/auth/login.php
+RewriteRule ^logout/*$ ./user/auth/logout.php
+RewriteRule ^success/*$ ./user/auth/success.php
+RewriteRule ^register/*$ ./user/auth/register.php
+RewriteRule ^activate/*$ ./user/auth/activate.php
+RewriteRule ^forgot-password/*$ ./user/auth/forgot-password.php
+RewriteRule ^activate/([a-zA-Z0-9]+)/*$ ./user/auth/activate.php?key=$1
+
+# SITE PAGES
+RewriteRule ^apartments/*$ ./apartments.php
+RewriteRule ^facilities/*$ ./facilities.php
+RewriteRule ^about/*$ ./about.php
+RewriteRule ^blog/*$ ./blog.php
+RewriteRule ^contact-us/*$ ./contact-us.php
+RewriteRule ^privacy/*$ ./privacy.php
+RewriteRule ^terms/*$ ./terms.php
+
+# User Pages
+RewriteRule ^profile/edit/*$ ./profile/edit.php
+RewriteRule ^profile/change-password/*$ ./profile/change-password.php
+
+# ONLY USE LINE BELOW IN PRODUCTION TO FORCE HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+</IfModule>
