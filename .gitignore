@@ -1,6 +1,6 @@
 .vscode
 .DS_Store
 composer.lock
-config.php
+/config.php
 test.php
 vendor/
