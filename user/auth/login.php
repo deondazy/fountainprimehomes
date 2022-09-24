@@ -3,6 +3,8 @@ if (!session_id()) {
     session_start();
 }
 
+use Okoye\Core\Util;
+
 require __DIR__ . '/../../bootstrap.php';
 
 $page = 'Login';
