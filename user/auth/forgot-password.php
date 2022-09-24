@@ -49,7 +49,7 @@ include OKOYE_ROOT . '/header.php';
                     </div>
 
 
-                    <button type="submit" id="submit" class="btn_1 rounded float-right">Reset Password</button>
+                    <button type="submit" id="submit" class="btn_1 rounded full-width">Reset Password</button>
                     
                 </form>
             </div>
