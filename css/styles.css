@@ -6446,17 +6446,17 @@ a.button,
     margin-left: 0px;
   }
 }
-/* .homepage-4 .header-user-name,
+.homepage-4 .header-user-name,
 .homepage-4 .header-user-name:before {
   color: #fff;
-} */
+}
 
-/* .homepage-4 #navigation.style-2.cloned .header-user-name,
+.homepage-4 #navigation.style-2.cloned .header-user-name,
 .homepage-4 #header.cloned.sticky .header-user-name,
 .homepage-4 #navigation.style-2.cloned .header-user-name:before,
 .homepage-4 #header.cloned.sticky .header-user-name:before {
   color: #666;
-} */
+}
 
 .welcome-area .video-icon {
   position: absolute;
@@ -18818,7 +18818,7 @@ body.dashboard-bd {
   font-weight: 400;
 }
 
-/* .header-user-name:before {
+.header-user-name:before {
   font-family: "FontAwesome";
   content: "\f0d7";
   position: absolute;
@@ -18828,7 +18828,7 @@ body.dashboard-bd {
   right: -16px;
   -webkit-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
-} */
+}
 
 .header-user-name span {
   position: absolute;
