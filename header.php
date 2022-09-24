@@ -104,13 +104,13 @@ function isActive($currentPage) {
 
                     <!-- Right Side Content / End -->
                         <div class="header-user-menu user-menu add">
-                            <div class="header-user-name">
-                                <span><img src="images/testimonials/ts-1.jpg" alt=""></span> Hi, <?php echo ucfirst($user->get('first_name', $user->currentUserId())); ?>!
+                            <div class="header-user-name pl-3">
+                                <span><img src="images/testimonials/ts-1.jpg" alt="<?php echo $user->get('first_name', $user->currentUserId()); ?>'s avatar"></span> Hi, <?php echo ucfirst($user->get('first_name', $user->currentUserId())); ?>!
                             </div>
                             <ul>
                                 <li><a href="<?php echo $site->url; ?>/profile/edit/"> Edit profile</a></li>
                                 <li><a href="<?php echo $site->url; ?>/profile/change-password/"> Change Password</a></li>
-                                <li><a href="<?php echo $site->url; ?>/auth/logout/">Log Out</a></li>
+                                <li><a href="<?php echo $site->url; ?>/user/auth/logout/">Log Out</a></li>
                             </ul>
                         </div>
                     <?php endif; ?>
