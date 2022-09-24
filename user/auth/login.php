@@ -17,12 +17,12 @@ if ("POST" == $_SERVER["REQUEST_METHOD"]) {
     $login = $user->login($email, $password);
 
     if ($login) {
-        $refUrl = $user->isAdmin($login['user_id']) ? 'admin/' : 'dashboard/';
+        $refUrl = $user->isAdmin($login['user_id']) ? '/admin/' : '/dashboard/';
 
         $user->addCookie($login["hash"], $login["expire"]);
 
         // Redirect after login
-        Util::redirect($refUrl);
+        Util::redirect($site->url . $refUrl);
     }
 
     if (!empty($user->error)) {
