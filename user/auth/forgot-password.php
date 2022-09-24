@@ -12,24 +12,12 @@ $page = 'Reset Password';
 // DO PASSWORD RESET
 if ("POST" == $_SERVER["REQUEST_METHOD"]) {
     $email = Util::escape($_POST["email"]);
-    $password = trim($_POST["password"]);
 
-    $login = $user->login($email, $password);
+    $reset = $user->requestReset($email, true);
 
-    if ($login) {
-        $refUrl = $user->isAdmin($login['user_id']) ? 'admin/' : 'dashboard/';
-
-        $user->addCookie($login["hash"], $login["expire"]);
-
-        // Redirect after login
-        Util::redirect($refUrl);
-    }
-
-    if (!empty($user->error)) {
-        foreach ($user->error as $error) {
-            Util::flash('error', $error, 'alert alert-danger');
-            Util::redirect($site->url . '/login/');
-        }
+    if ($reset) {
+        Util::flash('success', 'Password recovery information has been successfully sent to your mail.', 'alert alert-success alert-styled-left');
+        Util::redirect($site->url . '/forgot-password/');
     }
 }
 
