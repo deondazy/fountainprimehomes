@@ -56,4 +56,4 @@ include OKOYE_ROOT . '/header.php';
         </div>
         <!-- END SECTION LOGIN -->
 
-<?php include OKOYE_ROOT . '/footer.php';
+<?php include OKOYE_ROOT .'/footer.php';
