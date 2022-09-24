@@ -7,6 +7,32 @@ require __DIR__ . '/../../bootstrap.php';
 
 $page = 'Register';
 
+// DO SIGN UP
+if ("POST" == $_SERVER["REQUEST_METHOD"]) {
+    $firstName = Util::escape($_POST['fname']);
+    $lastName  = Util::escape($_POST['lname']);
+    $email     = Util::escape($_POST["email"]);
+    $password  = trim($_POST["password"]);
+    $timeNow   = time();
+
+    $register = $user->register($email, $password, 
+    [
+        "first_name"    => $firstName,
+        "last_name"     => $lastName,
+        "register_date" => $timeNow,
+    ], true);
+
+    if ($register) {
+        Util::redirect($site->url . '/success/');
+    } else {
+        foreach ($user->error as $error) {
+            Util::flash('error', $error, 'alert alert-danger alert-styled-left');
+        }
+
+        Util::redirect($site->url . '/sign-up/');
+    }
+}
+
 include OKOYE_ROOT . '/header.php';
 ?>
 
@@ -22,6 +48,9 @@ include OKOYE_ROOT . '/header.php';
         <!-- START SECTION LOGIN -->
         <div id="login">
             <div class="login">
+                <?php Util::flash('error'); ?>
+                <?php Util::flash('success'); ?>
+                
                 <form method="post">
                     <div class="form-group">
                         <label for="fname">First name</label>
