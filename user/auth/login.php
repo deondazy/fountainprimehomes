@@ -7,6 +7,30 @@ require __DIR__ . '/../../bootstrap.php';
 
 $page = 'Login';
 
+// DO LOGIN
+if ("POST" == $_SERVER["REQUEST_METHOD"]) {
+    $email = Util::escape($_POST["email"]);
+    $password = trim($_POST["password"]);
+
+    $login = $user->login($email, $password);
+
+    if ($login) {
+        $refUrl = $user->isAdmin($login['user_id']) ? 'admin/' : 'dashboard/';
+
+        $user->addCookie($login["hash"], $login["expire"]);
+
+        // Redirect after login
+        Util::redirect($refUrl);
+    }
+
+    if (!empty($user->error)) {
+        foreach ($user->error as $error) {
+            Util::flash('error', $error, 'alert alert-danger');
+            Util::redirect($site->url . '/login/');
+        }
+    }
+}
+
 include OKOYE_ROOT . '/header.php';
 ?>
 
@@ -22,6 +46,9 @@ include OKOYE_ROOT . '/header.php';
         <!-- START SECTION LOGIN -->
         <div id="login">
             <div class="login">
+                <?php Util::flash('error'); ?>
+                <?php Util::flash('success'); ?>
+
                 <form method="post">
                     <div class="form-group">
                         <label for="email">Email</label>
