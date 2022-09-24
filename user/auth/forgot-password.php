@@ -16,9 +16,15 @@ if ("POST" == $_SERVER["REQUEST_METHOD"]) {
     $reset = $user->requestReset($email, true);
 
     if ($reset) {
-        Util::flash('success', 'Password recovery information has been successfully sent to your mail.', 'alert alert-success alert-styled-left');
+        Util::flash('success', 'Password recovery information has been successfully sent to your email.', 'alert alert-success');
         Util::redirect($site->url . '/forgot-password/');
     }
+    
+    foreach($user->error as $error) {
+        Util::flash('error', $error, 'alert alert-danger');
+        Util::redirect($site->url . '/forgot-password/');
+    }
+
 }
 
 include OKOYE_ROOT . '/header.php';
@@ -36,18 +42,18 @@ include OKOYE_ROOT . '/header.php';
         <!-- START SECTION LOGIN -->
         <div id="login">
             <div class="login">
+                
+                <div class="alert alert-info">Enter your registered email and follow the instructions sent to you to reset your password.</div>
+                
                 <?php Util::flash('error'); ?>
                 <?php Util::flash('success'); ?>
-
-                <div class="alert alert-warning">Enter your registered email and follow the instructions sent to you to reset your password.</div>
-
+                        
                 <form method="post">
                     <div class="form-group">
                         <a class="rounded float-right" id="cancel" href="<?php echo $site->url; ?>/login/">Cancel</a>
                         <label for="email">Email</label>
                         <input type="email" class="form-control" name="email" id="email" autofocus>
                     </div>
-
 
                     <button type="submit" id="submit" class="btn_1 rounded full-width">Reset Password</button>
                     
@@ -56,4 +62,4 @@ include OKOYE_ROOT . '/header.php';
         </div>
         <!-- END SECTION LOGIN -->
 
-<?php include OKOYE_ROOT .'/footer.php';
+<?php include OKOYE_ROOT . '/footer.php';
