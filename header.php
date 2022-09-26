@@ -110,7 +110,7 @@ function isActive($currentPage) {
                             <ul>
                                 <li><a href="<?php echo $site->url; ?>/profile/edit/"> Edit profile</a></li>
                                 <li><a href="<?php echo $site->url; ?>/profile/change-password/"> Change Password</a></li>
-                                <li><a href="<?php echo $site->url; ?>/user/auth/logout/">Log Out</a></li>
+                                <li><a href="<?php echo $site->url; ?>/logout/">Log Out</a></li>
                             </ul>
                         </div>
                     <?php endif; ?>

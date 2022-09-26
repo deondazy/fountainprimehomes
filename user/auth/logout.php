@@ -11,7 +11,7 @@ if ($user->isLogged()) {
     $hash = Util::escape($_COOKIE[$config->cookie->login['name']]);
 	
     if ($user->logout($hash)) {
-	    Util::flash('logout', 'You have logged out', 'alert alert-success');
+	    Util::flash('success', 'You have logged out', 'alert alert-success');
     	Util::redirect($site->url . '/login/');
     }
 }
