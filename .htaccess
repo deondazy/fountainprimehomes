@@ -32,6 +32,20 @@ RewriteRule ^terms/*$ ./terms.php
 RewriteRule ^profile/edit/*$ ./profile/edit.php
 RewriteRule ^profile/change-password/*$ ./profile/change-password.php
 
+# Administrator
+RewriteRule ^admin/users/*$ ./admin/users/index.php
+RewriteRule ^admin/user/add/*$ ./admin/users/add.php
+RewriteRule ^admin/user/edit/([0-9]+)/*$ ./admin/users/edit.php?id=$1
+RewriteRule ^admin/user/delete/([0-9]+)/*$ ./admin/users/delete.php?id=$1
+
+RewriteRule ^admin/posts/*$ ./admin/posts/index.php
+RewriteRule ^admin/post/add/*$ ./admin/posts/add.php
+RewriteRule ^admin/post/categories/*$ ./admin/posts/categories.php
+RewriteRule ^admin/post/tags/*$ ./admin/posts/tags.php
+RewriteRule ^admin/post/edit/([0-9]+)/*$ ./admin/posts/edit.php?id=$1
+RewriteRule ^admin/post/delete/([0-9]+)/*$ ./admin/posts/delete.php?id=$1
+
+
 # ONLY USE LINE BELOW IN PRODUCTION TO FORCE HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
