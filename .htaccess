@@ -38,6 +38,11 @@ RewriteRule ^admin/user/add/*$ ./admin/users/add.php
 RewriteRule ^admin/user/edit/([0-9]+)/*$ ./admin/users/edit.php?id=$1
 RewriteRule ^admin/user/delete/([0-9]+)/*$ ./admin/users/delete.php?id=$1
 
+RewriteRule ^admin/apartments/*$ ./admin/apartments/index.php
+RewriteRule ^admin/apartment/add/*$ ./admin/apartments/add.php
+RewriteRule ^admin/apartment/edit/([0-9]+)/*$ ./admin/apartments/edit.php?id=$1
+RewriteRule ^admin/apartment/delete/([0-9]+)/*$ ./admin/apartments/delete.php?id=$1
+
 RewriteRule ^admin/posts/*$ ./admin/posts/index.php
 RewriteRule ^admin/post/add/*$ ./admin/posts/add.php
 RewriteRule ^admin/post/categories/*$ ./admin/posts/categories.php
