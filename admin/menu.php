@@ -12,15 +12,18 @@ use Okoye\Core\Database;
  * 2: Icon for the menu item
  */
 
-$memberMenu[1] = ['Overview', '', 'icon-meter-fast'];
-$memberMenu[2] = ['Users', 'users/', 'icon-users'];
-    $member_submenu['users/'][1] = ['All users', 'users/'];
-    $member_submenu['users/'][2] = ['Add new', 'user/add/'];
-$memberMenu[3] = ['Posts', 'posts/', 'icon-pen'];
-    $member_submenu['posts/'][1] = ['All posts', 'posts/'];
-    $member_submenu['posts/'][2] = ['Add new', 'post/add/'];
-    $member_submenu['posts/'][3] = ['Categories', 'post/categories/'];
-    $member_submenu['posts/'][4] = ['Tags', 'post/tags/'];
+$memberMenu[] = ['Overview', '', 'icon-meter-fast'];
+$memberMenu[] = ['Apartments', 'apartments/', 'icon-city'];
+    $member_submenu['apartments/'][] = ['All apartments', 'apartments/'];
+    $member_submenu['apartments/'][] = ['Add new', 'apartment/add/'];
+$memberMenu[] = ['Users', 'users/', 'icon-users'];
+    $member_submenu['users/'][] = ['All users', 'users/'];
+    $member_submenu['users/'][] = ['Add new', 'user/add/'];
+$memberMenu[] = ['Posts', 'posts/', 'icon-pen'];
+    $member_submenu['posts/'][] = ['All posts', 'posts/'];
+    $member_submenu['posts/'][] = ['Add new', 'post/add/'];
+    $member_submenu['posts/'][] = ['Categories', 'post/categories/'];
+    $member_submenu['posts/'][] = ['Tags', 'post/tags/'];
 ?>
 
 <!-- Main sidebar -->
