@@ -76,16 +76,39 @@ if (!$user->isLogged()) {
             </a>
 
             <ul class="nav navbar-nav visible-xs-block">
-                <li><a href="<?php echo $site->url; ?>/office/">Office</a></li>
                 <li><a class="sidebar-mobile-main-toggle"><i class="icon-paragraph-justify3"></i></a></li>
-                <li><a href="<?php echo $site->url; ?>/office/logout/"><i class="icon-switch2"></i></a></li>
+                <li><a href="<?php echo $site->url; ?>/logout/"><i class="icon-switch2"></i></a></li>
             </ul>
         </div>
 
         <div class="navbar-collapse collapse" id="navbar-mobile">
+            <ul class="nav navbar-nav navbar-left">
+                <li><a href="<?php echo $site->url; ?>/">Home</a></li>
+                <li><a href="<?php echo $site->url; ?>/apartments">Apartments</a></li>
+                <li><a href="<?php echo $site->url; ?>/facilities">Facilities</a></li>
+                <li><a href="<?php echo $site->url; ?>/about">About</a></li>
+                <li><a href="<?php echo $site->url; ?>/blog">Blog</a></li>
+                <li><a href="<?php echo $site->url; ?>/contact">Contact</a></li>
+            </ul>
+
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="<?php echo $site->url; ?>/office/">Office</a></li>
-                <li><a title="Logout" href="<?php echo $site->url; ?>/office/logout/"><i class="icon-switch2"></i></a></li>
+                <li class="dropdown dropdown-user">
+                    <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <span class="user-img">
+						    <img height="44" width="44" class="img-circle" src="https://ui-avatars.com/api/?name=<?php echo ucfirst($user->get('first_name', $user->currentUserId())); ?>+<?php echo ucfirst($user->get('last_name', $user->currentUserId())); ?>&font-size=0.33">
+                        </span>
+						
+                        <span>Hi, <?php echo $user->get('first_name', $user->currentUserId()); ?>!</span>
+						<i class="caret"></i>
+					</a>
+
+                    <ul class="dropdown-menu dropdown-menu-right">
+                        <li><a href="#"><i class="icon-user"></i> Profile</a></li>
+                        <li><a href="#"><i class="icon-credit-card2"></i> Payments</a></li>
+                        <li><a href="<?php echo $site->url; ?>/user/dashboard/change-password/"><i class="icon-lock4"></i> Change password</a></li>
+                        <li><a href="<?php echo $site->url; ?>/logout/"><i class="icon-switch2"></i> Logout</a></li>
+                    </ul>
+                </li>
             </ul>
         </div>
     </div>
