@@ -95,7 +95,7 @@ if (!$user->isLogged()) {
                 <li class="dropdown dropdown-user">
                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
                         <span class="user-img">
-						    <img height="44" width="44" class="img-circle" src="https://ui-avatars.com/api/?name=<?php echo ucfirst($user->get('first_name', $user->currentUserId())); ?>+<?php echo ucfirst($user->get('last_name', $user->currentUserId())); ?>&font-size=0.33">
+						    <img height="44" width="44" class="img-circle" src="<?php echo $user->avatar($user->currentUserId()); ?>">
                         </span>
 						
                         <span>Hi, <?php echo $user->get('first_name', $user->currentUserId()); ?>!</span>
@@ -103,8 +103,8 @@ if (!$user->isLogged()) {
 					</a>
 
                     <ul class="dropdown-menu dropdown-menu-right">
-                        <li><a href="#"><i class="icon-user"></i> Profile</a></li>
-                        <li><a href="#"><i class="icon-credit-card2"></i> Payments</a></li>
+                        <li><a href="<?php echo $site->url; ?>/user/dashboard/profile/"><i class="icon-user"></i> Profile</a></li>
+                        <li><a href="<?php echo $site->url; ?>/user/dashboard/payments/"><i class="icon-credit-card2"></i> Payments</a></li>
                         <li><a href="<?php echo $site->url; ?>/user/dashboard/change-password/"><i class="icon-lock4"></i> Change password</a></li>
                         <li><a href="<?php echo $site->url; ?>/logout/"><i class="icon-switch2"></i> Logout</a></li>
                     </ul>
