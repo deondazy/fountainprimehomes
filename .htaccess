@@ -29,8 +29,10 @@ RewriteRule ^privacy/*$ ./privacy.php
 RewriteRule ^terms/*$ ./terms.php
 
 # User Pages
-RewriteRule ^profile/edit/*$ ./profile/edit.php
-RewriteRule ^profile/change-password/*$ ./profile/change-password.php
+RewriteRule ^user/dashboard/profile/*$ ./user/dashboard/profile.php
+RewriteRule ^user/dashboard/payments/*$ ./user/dashboard/payments.php
+RewriteRule ^user/dashboard/bookmark/*$ ./user/dashboard/bookmark.php
+RewriteRule ^user/dashboard/change-password/*$ ./user/dashboard/change-password.php
 
 # Administrator
 RewriteRule ^admin/users/*$ ./admin/users/index.php
