@@ -6078,3 +6078,16 @@ form #cc_img.discover {
     box-shadow: 0 0 12px 0 rgb(0 0 0 / 30%);
     z-index: 1;
 }
+
+.dropdown-user ul li a {
+    color: #50596E;
+    width: 100%;
+    font-size: 15px;
+    text-decoration: none;
+    font-weight: 400;
+    text-align: left;
+    padding: 6px 15px;
+    line-height: 22px;
+    display: inline-block;
+    transition: 0.2s;
+}
