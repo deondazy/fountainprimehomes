@@ -14,6 +14,8 @@ if ("POST" == $_SERVER["REQUEST_METHOD"]) {
     $firstName = Util::escape($_POST['fname']);
     $lastName  = Util::escape($_POST['lname']);
     $email     = Util::escape($_POST["email"]);
+    $phone     = Util::escape($_POST["phone"]);
+    $country   = Util::escape($_POST["country"]);
     $password  = trim($_POST["password"]);
     $timeNow   = time();
 
@@ -21,6 +23,8 @@ if ("POST" == $_SERVER["REQUEST_METHOD"]) {
     [
         "first_name"    => $firstName,
         "last_name"     => $lastName,
+        "phone"         => $phone,
+        "country"       => $country,
         "register_date" => $timeNow,
     ], false);
 
@@ -48,36 +52,63 @@ include OKOYE_ROOT . '/header.php';
 <!-- END SECTION HEADINGS -->
 
 <!-- START SECTION LOGIN -->
-<div id="login">
-    <div class="login">
+<div id="register">
+    <div class="register">
         <?php Util::flash('error'); ?>
         <?php Util::flash('success'); ?>
 
         <form method="post">
-            <div class="form-group">
-                <label for="fname">First name</label>
-                <input type="text" class="form-control" name="fname" id="fname" autofocus>
-            </div>
-            
-            <div class="form-group">
-                <label for="lname">Last name</label>
-                <input type="text" class="form-control" name="lname" id="lname">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="fname">First name</label>
+                        <input type="text" class="form-control" name="fname" id="fname" autofocus required>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="lname">Last name</label>
+                        <input type="text" class="form-control" name="lname" id="lname" required>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" class="form-control" name="email" id="email">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" required>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" class="form-control" name="phone" id="phone" required>
+                    </div>
+                </div>
             </div>
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" name="password" id="password">
+                <input type="password" class="form-control" name="password" id="password" autocomplete="new-password" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country</label>
+                <select class="form-control" name="country" id="country" required>
+                    <option>Select country</option>
+                    <?php foreach ($countryClass->getAll() as $country): ?>
+                        <option value="<?php echo $country->id; ?>"><?php echo $country->nicename; ?></option>
+                    <?php endforeach; ?>
+                </select>
             </div>
 
             <div class="fl-wrap filter-tags clearfix add_bottom_30">
                 <div class="checkboxes float-left">
                     <div class="filter-tags-wrap">
-                        <input id="check-b" type="checkbox" name="check">
+                        <input id="check-b" type="checkbox" name="check" required>
                         <label for="check-b">I accept the <a target="_blank" href="<?php echo $site->url; ?>/terms/">Terms and Conditions</a></label>
                     </div>
                 </div>
