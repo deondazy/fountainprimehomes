@@ -13,7 +13,7 @@ use Okoye\Core\Database;
  */
 
 $memberMenu[] = ['Dashboard', '', 'icon-meter-fast'];
-$memberMenu[] = ['Bookmarked properties', '/bookmark', 'icon-heart5'];
+$memberMenu[] = ['Bookmarked properties', 'bookmark/', 'icon-heart5'];
 $memberMenu[] = ['Profile', 'profile/', 'icon-user'];
 $memberMenu[] = ['Payments', 'payments/', 'icon-credit-card2'];
 $memberMenu[] = ['Change password', 'change-password/', 'icon-lock4'];
@@ -28,11 +28,7 @@ $memberMenu[] = ['Change password', 'change-password/', 'icon-lock4'];
                 <div class="media">
                     <div class="media-body">
                         <div class="sidebar-avatar text-center">
-                            <?php if (empty($user->get('avatar', $user->currentUserId()))) : ?>
-                                <img style="border:5px solid #4CAF50;" width="90" class="img-circle" src="https://ui-avatars.com/api/?name=<?php echo ucfirst($user->get('first_name', $user->currentUserId())); ?>+<?php echo ucfirst($user->get('last_name', $user->currentUserId())); ?>&font-size=0.33">
-                            <?php else : ?>
-                                <img width="90" height="90" class="img-circle" src="<?php echo $user->get('avatar', $user->currentUserId()); ?>" style="height:50px;width:50px;">
-                            <?php endif; ?>
+                            <img style="border:5px solid #4CAF50;" width="90" height="90" class="img-circle" src="<?php echo $user->avatar($user->currentUserId()); ?>">
                         </div>
                         <div class="text-center mt-15">
                             <h3 style="font-size:16px;" class="sidebar-name">
