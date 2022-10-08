@@ -3,15 +3,10 @@ if (!session_id()) {
     session_start();
 }
 
-use Okoye\Core\Site;
 use Okoye\Core\Util; 
 
 if (!$user->isLogged()) {
     Util::redirect($site->url . '/login/?refurl=' . urlencode($_SERVER['REQUEST_URI']));
-}
-
-if (!$user->isAdmin($user->currentUserId())) {
-    Util::redirect($site->url . '/office/');
 }
 ?>
 <!DOCTYPE html>
