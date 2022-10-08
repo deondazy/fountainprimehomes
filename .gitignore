@@ -5,3 +5,4 @@ composer.lock
 test.php
 vendor/
 error.log
+/user/dashboard/uploads/avatars/*
