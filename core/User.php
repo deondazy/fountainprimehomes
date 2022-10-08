@@ -59,39 +59,40 @@ class User extends Base
     }
 
     /**
-     * Creates a new user, adds them to database
+     * Register a new user account
      *
-     * @param string $email
-     * @param string $password
-     * @param string $repeatpassword
-     * @param array  $params
-     * @param bool $sendmail = NULL
+     * @param string $email User supplied email.
+     * @param string $password User supplied password.
+     * @param array  $params User supplied additional parameters.
+     * @param bool $sendmail Send email to user? Default to true.
      *
-     * @return bool
+     * @return int|bool User id on success or false on failure
      */
     public function register($email, $password, array $params = [], $sendmail = NULL)
     {
-        // if ($password !== $repeatpassword) {
-        //     $this->error[] = "Password mismatch";
-        //     return false;
-        // }
-
-        // Password length
-        if (strlen($password) < 8) {
-            $this->error[] = "Password is too short, minimum of 8 characters required";
-            return false;
-        }
+        // Change email to lowercase
+        $email = strtolower($email);
 
         // Validate email
         if (!Util::isEmail($email)) {
             $this->error[] = "Email address is invalid";
             return false;
         }
-
+        
+        // Check if email exists
         if ($this->getByEmail($email)) {
             $this->error[] = "Email is taken";
             return false;
         }
+
+        // Password length must not be less than 8 characters
+        if (strlen($password) < 8) {
+            $this->error[] = "Password is too short, minimum of 8 characters required";
+            return false;
+        }
+
+        // Hash password
+        $password = password_hash($password, PASSWORD_DEFAULT);
 
         $addUser = $this->addUser($email, $password, $params, $sendmail);
 
@@ -414,8 +415,6 @@ class User extends Base
         } else {
             $isActive = 1;
         }
-
-        //$password = PASSWORD_HASH($password, PASSWORD_DEFAULT);
 
         if (is_array($params) && count($params) > 0) {
             $customParamsQueryArray = [];
