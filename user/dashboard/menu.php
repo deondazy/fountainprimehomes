@@ -13,7 +13,10 @@ use Okoye\Core\Database;
  */
 
 $memberMenu[] = ['Dashboard', '', 'icon-meter-fast'];
+$memberMenu[] = ['Bookmarked properties', '/bookmark', 'icon-heart5'];
 $memberMenu[] = ['Profile', 'profile/', 'icon-user'];
+$memberMenu[] = ['Payments', 'payments/', 'icon-credit-card2'];
+$memberMenu[] = ['Change password', 'change-password/', 'icon-lock4'];
 ?>
 
 <!-- Main sidebar -->
