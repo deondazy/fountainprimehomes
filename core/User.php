@@ -893,23 +893,10 @@ class User extends Base
         global $site;
 
         if (!empty($this->get('avatar', $id))) {
-            return $this->get('avatar', $id);
+            $avatar = $this->get('avatar', $id);
+            return $site->url . OKOYE_AVATAR_URL . $avatar;
         }
 
-        return $site->url . '/assets/images/user/generic.jpg';
-    }
-
-    public function getExperiences($id)
-    {
-        $userExperienceClass = new UserExperience;
-
-        return $userExperienceClass->getAll("user_id = {$id}", 'create_date DESC');
-    }
-
-    public function getEducation($id)
-    {
-        $userEducationClass = new UserEducation;
-
-        return $userEducationClass->getAll("user_id = {$id}", 'create_date DESC');
+        return 'https://ui-avatars.com/api/?name=' . ucfirst($this->get('first_name', $id)) . '+' . ucfirst($this->get('last_name', $id)) . '&font-size=0.33';
     }
 }
