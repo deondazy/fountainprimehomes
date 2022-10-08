@@ -16,6 +16,9 @@ define('OKOYE_PHP', '7.4');
 // Define installation root path
 define('OKOYE_ROOT', dirname(__FILE__));
 
+// Define avatar upload path
+define('OKOYE_AVATAR_URL', '/user/dashboard/uploads/avatars/');
+
 // Compare PHP versions against our required version
 if (!version_compare(OKOYE_PHP, '7.4', '>=')) {
     exit(
@@ -62,3 +65,4 @@ try {
 $user = new Okoye\Core\User;
 $site = $config->site;
 $log  = new Okoye\Core\Log($config);
+$countryClass = new Okoye\Core\Country;
