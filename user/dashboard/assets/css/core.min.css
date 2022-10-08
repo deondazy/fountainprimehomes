@@ -2098,6 +2098,27 @@ input[class*=bg-]+.form-control-feedback {
     .nav-tabs.nav-justified>li.active>a, .nav-tabs.nav-justified>li.active>a:focus, .nav-tabs.nav-justified>li.active>a:hover {
         border: 0
     }
+    .navbar-header {
+        background-color: #24324a;
+    }
+    .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
+        color: #fff;
+    }
+}
+
+@media (max-width: 1127px) {
+    .nav.navbar-nav.navbar-left {
+        display: none;
+    }
+}
+
+@media (max-width: 993px) {
+    .navbar-inverse {
+        background-color: #24324a !important;
+    }
+    .navbar-inverse .navbar-nav>li>a, .navbar-inverse .navbar-text {
+        color: #fff;
+    }
 }
 
 @media (min-width:769px) {
@@ -2742,7 +2763,7 @@ input[class*=bg-]+.form-control-feedback {
     .navbar-header {
         background: #24324a;
         width: 280px;
-        padding: 35px 10px;
+        min-height: 100px;
     }
     .navbar-header {
         margin-left: -20px
@@ -2850,8 +2871,9 @@ input[class*=bg-]+.form-control-feedback {
 }
 
 .navbar-nav>li>a {
-    padding-top: 13px;
-    padding-bottom: 13px
+    padding: 0 16px !important;
+    height: 96px;
+    line-height: 96px;
 }
 
 .navbar-nav>li>a>.badge, .navbar-nav>li>a>.label {
@@ -2885,21 +2907,37 @@ input[class*=bg-]+.form-control-feedback {
     top: -1px
 }
 
-.navbar-nav>.dropdown-user>a, .navbar-nav>.dropdown-user>a>span {
-    padding-top: 6.5px;
-    padding-bottom: 6.5px
-}
-
 .navbar-nav>.dropdown-user>a>span {
     display: inline-block;
     padding-left: 7px
 }
 
-.navbar-nav>.dropdown-user img {
-    width: 30px;
-    height: 30px;
-    margin-top: -2.5px;
-    border-radius: 50%
+.navbar-nav>.dropdown-user .user-img {
+    position: relative;
+}
+
+.navbar-nav>.dropdown-user .user-img img {
+    border: 3px solid #fff;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 0px 4px rgb(255 255 255 / 20%);
+    box-shadow: 0px 0px 0px 4px rgb(255 255 255 / 20%);
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.navbar-nav>.dropdown-user .user-img::after {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    bottom: 25px;
+    right: 2px;
+    background-color: #38b653;
+    display: block;
+    border: 2px solid #fff;
+    -webkit-box-shadow: 0 2px 3px rgb(0 0 0 / 20%);
+    box-shadow: 0 2px 3px rgb(0 0 0 / 20%);
+    border-radius: 50%;
 }
 
 .navbar-lg .navbar-nav>.dropdown-user img {
@@ -6032,7 +6070,7 @@ form #cc_img.discover {
 }
 
 .navbar-brand {
-    padding: 0 20px;
+    padding: 25px 20px;
 }
 
 .navbar-inverse {
