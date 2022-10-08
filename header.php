@@ -105,12 +105,14 @@ function isActive($currentPage) {
                     <!-- Right Side Content / End -->
                         <div class="header-user-menu user-menu add">
                             <div class="header-user-name pl-3">
-                                <span><img src="<?php echo $site->url; ?>/images/testimonials/ts-1.jpg" alt="<?php echo $user->get('first_name', $user->currentUserId()); ?>'s avatar"></span> Hi, <?php echo ucfirst($user->get('first_name', $user->currentUserId())); ?>!
+                                <span><img src="<?php echo $user->avatar($user->currentUserId()); ?>" alt="<?php echo $user->get('first_name', $user->currentUserId()); ?>'s avatar"></span> Hi, <?php echo ucfirst($user->get('first_name', $user->currentUserId())); ?>!
                             </div>
                             <ul>
-                                <li><a href="<?php echo $site->url; ?>/profile/edit/"> Edit profile</a></li>
-                                <li><a href="<?php echo $site->url; ?>/profile/change-password/"> Change Password</a></li>
-                                <li><a href="<?php echo $site->url; ?>/logout/">Log Out</a></li>
+                                <li><a href="<?php echo $site->url; ?>/user/dashboard/"> Dashboard</a></li>
+                                <li><a href="<?php echo $site->url; ?>/user/dashboard/profile/"> Profile</a></li>
+                                <li><a href="<?php echo $site->url; ?>/user/dashboard/payments/"> Payments</a></li>
+                                <li><a href="<?php echo $site->url; ?>/user/dashboard/change-password/"> Change Password</a></li>
+                                <li><a href="<?php echo $site->url; ?>/logout/">Logout</a></li>
                             </ul>
                         </div>
                     <?php endif; ?>
