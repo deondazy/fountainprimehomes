@@ -31,7 +31,7 @@ class User extends Base
             return false;
         }
 
-        if ($password != $user->password) {
+        if (!password_verify($password, $user->password)) {
             $this->error[] = "Email and password combination is incorrect";
             return false;
         }

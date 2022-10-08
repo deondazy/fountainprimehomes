@@ -254,7 +254,7 @@ class Database
         }
         $set = rtrim($set, ', '); // remove last comma(,)
 
-        // Construuct the query
+        // Construct the query
         $this->query("UPDATE {$table} SET {$set} WHERE id = :id");
 
         $this->bind(':id', $id);
