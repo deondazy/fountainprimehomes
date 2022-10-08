@@ -20482,14 +20482,16 @@ section.pricing-table {
 /*- 60. INNER PAGE LOGIN --*/
 /*---------------------------------------*/
 #login .login,
-#register .login {
-  width: 430px;
+#register .register {
+  max-width: 630px;
+  width: 100%;
   padding: 45px 60px 60px;
   overflow-y: auto;
   background-color: #fff;
 }
 
-#login {
+#login,
+#register {
   background-color: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20561,14 +20563,16 @@ a.social_bt.linkedin:before {
   color: #fff;
 }
 
-#login .divider {
+#login .divider,
+#register .divider {
   height: 1px;
   margin: 30px 0 20px;
   text-align: center;
   background-color: #e1e8ed;
 }
 
-#login .divider span {
+#login .divider span,
+#register .divider span {
   background-color: #fff;
   display: inline-block;
   position: relative;
@@ -20581,11 +20585,13 @@ a.social_bt.linkedin:before {
   margin-bottom: 30px;
 }
 
-#login .float-left {
+#login .float-left,
+#register .float-left {
   float: left !important;
 }
 
-#login .container_check {
+#login .container_check,
+#register .container_check {
   display: block;
   position: relative;
   padding-left: 35px;
@@ -20598,13 +20604,15 @@ a.social_bt.linkedin:before {
   margin-right: 10px;
 }
 
-#login .container_check input {
+#login .container_check input,
+#register .container_check input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
 }
 
-#login .container_check .checkmark {
+#login .container_check .checkmark,
+#register .container_check .checkmark {
   position: absolute;
   top: 0;
   left: 0;
@@ -20616,7 +20624,8 @@ a.social_bt.linkedin:before {
   transition: all .2s ease;
 }
 
-#login .float-right {
+#login .float-right,
+#register .float-right {
   float: right !important;
   margin-top: 0px !important;
 }
@@ -20628,11 +20637,13 @@ a#forgot {
 }
 
 #login .btn_1.rounded,
+#register .btn_1.rounded,
 a.btn_1.rounded {
   border-radius: 25px !important;
 }
 
 #login .btn_1.full-width,
+#register .btn_1.full-width,
 a.btn_1.full-width {
   display: block;
   width: 100%;
@@ -20642,6 +20653,7 @@ a.btn_1.full-width {
 }
 
 #login .btn_1,
+#register .btn_1,
 a.btn_1 {
   border: none;
   background: #004274;
@@ -20655,19 +20667,23 @@ a.btn_1 {
   border-radius: 3px;
 }
 
-#login a.btn_1:hover {
+#login a.btn_1:hover,
+#register a.btn_1:hover {
   background: #121B22;
 }
 
-#login .add_top_10 {
+#login .add_top_10,
+#register .add_top_10 {
   margin-top: 16px;
 }
 
-#login .text-center {
+#login .text-center,
+#register .text-center {
   text-align: center !important;
 }
 
-#login strong a {
+#login strong a,
+#register strong a {
   text-decoration: none;
 }
 
@@ -20708,6 +20724,7 @@ a.btn_1 {
   }
 
   #login .checkboxes label,
+  #register .checkboxes label,
   a#forgot {
     font-size: 13px;
   }
@@ -21602,6 +21619,7 @@ a.btn_1 {
 .inner-pages .form-control {
   padding: .7rem;
   border: 1px solid #dddddd;
+  height: 45px;
 }
 
 @media screen and (max-width: 767px) {
